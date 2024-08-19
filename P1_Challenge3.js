@@ -55,5 +55,5 @@ if (dolphinsScore_B2 > koalasScore_B2 && dolphinsScore_B2 >= 100) {
 } else if (dolphinsScore_B2 === koalasScore_B2 && dolphinsScore_B2 >= 100 && koalasScore_B2 >= 100) {
     console.log("draw");
 } else {
-    console.log("bruh");
+    console.log("bruhh");
 }
