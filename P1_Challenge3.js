@@ -52,8 +52,8 @@ if (dolphinsScore_B2 > koalasScore_B2 && dolphinsScore_B2 >= 100) {
     console.log("Dolphins win");
 } else if (dolphinsScore_B2 < koalasScore_B2 && koalasScore_B2 >= 100) {
     console.log("Koalas win");
-} else {
+} else if (dolphinsScore_B2 === koalasScore_B2 && dolphinsScore_B2 >= 100 && koalasScore_B2 >= 100) {
     console.log("draw");
+} else {
+    console.log("bruh");
 }
-
-//Bonus 1 and 2 are the same???????

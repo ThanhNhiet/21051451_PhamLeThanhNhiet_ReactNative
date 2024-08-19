@@ -57,4 +57,4 @@ checkWinnerIgnoreDraw(avgDolphins_d2, avgKoalas_d2);
 // Hints:
 // § To calculate average of 3 values, add them all together and divide by 3
 // § To check if number A is at least double number B, check for A >= 2 * B.
-// Apply this to the team's average scores �
+// Apply this to the team's average scores
