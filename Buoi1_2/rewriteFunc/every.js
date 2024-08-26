@@ -10,3 +10,4 @@ Array.prototype.myEvery = function(callback) {
 
 const number = [45, 4, 9, 16, 25];
 var value = number.myEvery((num) => num > 18);
+console.log(value);
