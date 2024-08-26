@@ -1,14 +1,13 @@
-const number = [45, 4, 9, 16, 25];
-
-Array.prototype.myfilter = function(num) {
-    let newarr = [];
-    console.log(this);
+Array.prototype.myfilter = function(callback) {
+    const result = [];
     for (let i = 0; i < this.length; i++) {
-        if (this[i] > num)
-            newarr.push(this[i]);
+        if (callback(this[i], i, this)) {
+            result.push(this[i]);
+        }
     }
-    return newarr;
+    return result;
 }
 
-var value = number.myfilter(18);
+const number = [45, 4, 9, 16, 25];
+var value = number.myfilter((x) => x > 18);
 console.log(value);
