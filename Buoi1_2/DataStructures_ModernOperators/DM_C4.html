@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underscore to Camel Case</title>
+</head>
+
+<body>
+
+    <script>
+        document.body.append(document.createElement('textarea'));
+        document.body.append(document.createElement('button'));
+        // config txtArea
+        document.querySelector('textarea').id = 'textarea';
+        document.getElementById('textarea').rows = 10;
+        document.getElementById('textarea').textContent =
+            "underscore_case\nfirst_name\nSome_Variable\ncalculate_AGE\ndelayed_departure";
+        // config btn
+        document.querySelector('button').id = 'convertButton';
+        document.getElementById('convertButton').textContent = 'Convert';
+
+        document.getElementById('convertButton').addEventListener('click', function() {
+            // Get the input value from the textarea
+            const inputText = document.getElementById('textarea').value.trim();
+            // Split the input text by new lines
+            const lines = inputText.split('\n'); //lines now is arr
+
+            lines.forEach((line, index) => {
+                line = line.trim();
+                const camelCase = line
+                    .toLowerCase()
+                    .split('_')
+                    // .map((word, i) => i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1))
+                    .join('');
+
+                console.log(`${camelCase} ${'✅'.repeat(index + 1)}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
