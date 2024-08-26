@@ -1,7 +1,7 @@
 //rewrite function some to mySome
-Array.prototype.mySome = function(num) {
-    for (let i = 0; i < num.length; i++) {
-        if (callback(num[i])) {
+Array.prototype.mySome = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i])) {
             return true;
         }
     }
@@ -9,5 +9,5 @@ Array.prototype.mySome = function(num) {
 }
 
 const number = [45, 4, 9, 16, 25];
-var value = number.mySome(18);
+var value = number.mySome((x) => x > 18);
 console.log(value);
