@@ -10,5 +10,5 @@ Array.prototype.myfilter = function(num) {
     return newarr;
 }
 
-var value = number.myfilter(10);
+var value = number.myfilter(18);
 console.log(value);
