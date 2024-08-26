@@ -1,4 +1,4 @@
-//rewrite function some
+//rewrite function some to mySome
 Array.prototype.mySome = function(num) {
     for (let i = 0; i < num.length; i++) {
         if (callback(num[i])) {
