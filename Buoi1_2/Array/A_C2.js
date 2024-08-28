@@ -13,21 +13,19 @@
 function calcAverageHumanAge(ages) {
     // 1
     let humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4);
-    console.log(`human ages: ${humanAges}`);
+    // console.log(`human ages: ${humanAges}`);
     // 2
     let adultDogs = humanAges.filter(age => age >= 18);
-    console.log(`adult dogs: ${adultDogs}`);
+    // console.log(`adult dogs: ${adultDogs}`);
     // 3
     let average = adultDogs.reduce((acc, age, i, arr) => acc + age / arr.length, 0);
-    console.log(`average age: ${average}`);
+    console.log(`\naverage age: ${average}`);
 }
 // 4. Run the function for both test datasets
 // Test data:
 // § Data 1: [5, 2, 4, 1, 15, 8, 3]
 let d1 = [5, 2, 4, 1, 15, 8, 3];
 calcAverageHumanAge(d1);
-
-console.log(`\n`);
 // § Data 2: [16, 6, 10, 5, 6, 1, 4]
 let d2 = [16, 6, 10, 5, 6, 1, 4];
 calcAverageHumanAge(d2);
