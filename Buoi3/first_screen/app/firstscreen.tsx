@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
-const App = () => {
+const FirstScreen = ({ goBack }: { goBack: () => void }) => {
   return (
+    <TouchableWithoutFeedback onPress={goBack}>
     <View style={styles.container}>
       {/* Vùng 1: Hình tròn */}
       <View style={styles.circle} ></View>
@@ -31,6 +32,7 @@ const App = () => {
         </TouchableOpacity>
       </View>
     </View>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -73,8 +75,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 220,
     flexDirection: 'row',
-    
-    // justifyContent: 'space-around',
   },
   button: {
     backgroundColor: '#FFD700',
@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default FirstScreen;
