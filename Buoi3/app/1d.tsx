@@ -61,8 +61,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#e3f7e3',
     padding: 20,
     alignItems: 'center',
+    width: '100%',
+    height: '100%',
   },
-  
+
   containerUpdate: {
     flex: 1,
     justifyContent: 'center',
@@ -117,7 +119,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
-    width: '100%',
     marginHorizontal: 60,
   },
 

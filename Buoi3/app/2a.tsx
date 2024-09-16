@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f2c301',
-        padding: 20,
+        padding: 22,
         width: '100%',
         height: '100%',
     },
@@ -112,14 +112,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 100,
         alignItems: 'center',
         marginBottom: 20,
+        width: '100%'
     },
 
     loginButtonText: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-        width: '100%',
         marginHorizontal: 60,
+        textAlign: 'center'
     },
 });
 

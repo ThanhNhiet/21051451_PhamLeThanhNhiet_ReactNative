@@ -46,17 +46,18 @@ const Screen1a = ({ goBack }: { goBack: () => void }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginLeft: 20,
-        marginRight: 20,
+        padding: 20,
         backgroundColor: '#d8f4f4',
         alignItems: 'center',
+        width: '100%',
+        height: '100%'
     },
 
     circle: {
         marginTop: 80,
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: 100,
+        height: 100,
+        borderRadius: 50,
         borderWidth: 10,
     },
 
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        marginTop: 80,
+        marginTop: 60,
     },
     title: {
         fontSize: 24,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     descriptionContainer: {
         flex : 1,
         alignItems: 'center',
-        marginTop: 80,
+        marginTop: 60,
         marginRight: 20,
         marginLeft: 20,
     },

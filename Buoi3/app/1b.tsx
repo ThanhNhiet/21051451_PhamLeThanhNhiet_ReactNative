@@ -49,10 +49,11 @@ const Screen1b = ({ goBack }: { goBack: () => void }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginLeft: 20,
-    marginRight: 20,
+    padding: 20,
     backgroundColor: '#d8f4f4',
     alignItems: 'center',
+    width: '100%',
+    height: '100%'
   },
   containerUpdate: {
     flex: 1,
@@ -63,12 +64,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   area1: {
-    marginTop: 80,
+    marginTop: 70,
     width: 100,
     height: 100,
   },
   titleContainer: {
-    flex: 1,
     justifyContent: 'flex-start',
     marginTop: 120,
     alignItems: 'center',
@@ -79,10 +79,10 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   descriptionContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
+    // flex: 1,
+    // justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 10,
   },
   description: {
     fontSize: 16,
@@ -91,13 +91,12 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   inputContainer: {
-    flex: 1,
     marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
     paddingHorizontal: 10,
-    width: '90%',
+    width: '100%',
     backgroundColor: '#c4c4c4',
   },
   icon: {
@@ -110,18 +109,19 @@ const styles = StyleSheet.create({
     height: 50,
   },
   buttonContainer: {
-    flex: 25,
-    marginTop: 40,
+    marginTop: 30,
     flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
   },
+
   button: {
     backgroundColor: '#FFD700',
     paddingVertical: 15,
     paddingHorizontal: 30,
     alignItems: 'center',
-    width: '100%',
     height: 60,
-    marginHorizontal: 40,
+    width: '100%'
   },
   buttonText: {
     fontSize: 20,

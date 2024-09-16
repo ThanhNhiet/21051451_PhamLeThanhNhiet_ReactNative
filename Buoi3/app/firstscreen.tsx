@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
     backgroundColor: '#00BFFF',
     alignItems: 'center',
+    width: '100%',
+    height: '100%'
   },
 
   circle: {

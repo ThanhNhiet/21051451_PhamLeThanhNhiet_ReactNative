@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
     backgroundColor: '#d8f4f4',
     alignItems: 'center',
+    width: '100%',
+    height: '100%'
   },
 
   containerUpdate: {
@@ -99,51 +101,49 @@ const styles = StyleSheet.create({
   },
 
   area1: {
-    flex: 0.1,
-    justifyContent: 'flex-start',
+    flex: 3,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    marginTop: 120,
+    marginTop: 50,
     width: 200,
     height: 100,
   },
 
   area1Text: {
-    fontSize: 70,
+    fontSize: 75,
     fontWeight: 'bold',
     color: 'black',
   },
 
   titleContainer: {
-    flex: 0.1,
-    justifyContent: 'flex-start',
-    marginTop: 60,
+    flex: 3,
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
   },
 
   descriptionContainer: {
-    flex: 0.2,
-    justifyContent: 'flex-start',
+    flex: 1.2,
     alignItems: 'center',
-    marginTop: 60,
+    justifyContent: 'flex-end',
   },
 
   description: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'black',
   },
 
   inputContainer: {
-    flex: 0.1,
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
     marginHorizontal: 20,
   },
   input: {
@@ -160,15 +160,17 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'flex-start',
     flexDirection: 'row',
+    padding: 20,
+    width: '100%'
   },
   button: {
     backgroundColor: '#FFD700',
     paddingVertical: 15,
     paddingHorizontal: 30,
     alignItems: 'center',
-    width: '90%',
+    width: '100%',
     height: 60,
-    marginHorizontal: 40,
+    // marginHorizontal: 40,
   },
   buttonText: {
     fontSize: 20,
@@ -176,13 +178,13 @@ const styles = StyleSheet.create({
     color: 'black',
   },
 
-  bottomSection: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#90e4f4',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // bottomSection: {
+  //   flex: 1,
+  //   width: '100%',
+  //   backgroundColor: '#90e4f4',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
 });
 
 export default Screen1c;

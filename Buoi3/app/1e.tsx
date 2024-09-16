@@ -68,6 +68,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#e3f7e3',
+        width: '100%',
+        height: '100%',
         padding: 20,
     },
 
@@ -142,8 +144,9 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-        width: '100%',
         marginHorizontal: 60,
+        width: '100%',
+        textAlign: 'center'
     },
 
     termsText: {

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 // Import các màn hình
-import FirstScreen from './firstscreen';
-import Screen1a from './1a';
-import Screen1b from './1b';
-import Screen1c from './1c';
-import Screen1d from './1d'
-import Screen1e from './1e'
-import Screen2a from './2a'
-import XMeye from './XMeye'
+import FirstScreen from './app/firstscreen';
+import Screen1a from './app/1a';
+import Screen1b from './app/1b';
+import Screen1c from './app/1c';
+import Screen1d from './app/1d'
+import Screen1e from './app/1e'
+import Screen2a from './app/2a'
+import XMeye from './app/XMeye'
 // Tiếp tục import các màn hình khác...
 
 const App = () => {
@@ -45,7 +45,6 @@ const App = () => {
             <Button title="Go to Screen 1e" onPress={() => setCurrentScreen('Screen1e')} />
             <Button title="Go to Screen 2a" onPress={() => setCurrentScreen('Screen2a')} />
             <Button title="Go to XMeye" onPress={() => setCurrentScreen('XMeye')} />
-            {/* Tiếp tục thêm các nút cho các màn hình khác */}
           </View>
         );
     }
