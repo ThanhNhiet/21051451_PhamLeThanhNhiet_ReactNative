@@ -74,10 +74,12 @@ export default function App({ goBack }: { goBack: () => void }) {
   return (
     <View style={styles.container}>
    <View style={styles.topNavigation}>
-  <Image style={styles.icon} source={require("../assets/back.png")} />
-  <Text style={styles.chatTitle}>Chat</Text>
-  <Image style={styles.icon} source={require("../assets/cart.png")} />
-</View>
+    <TouchableOpacity onPress={goBack}>
+      <Image style={styles.icon} source={require("../assets/back.png")} />
+    </TouchableOpacity>
+    <Text style={styles.chatTitle}>Chat</Text>
+    <Image style={styles.icon} source={require("../assets/cart.png")} />
+  </View>
 
       <FlatList
         data={DATA}
@@ -90,7 +92,9 @@ export default function App({ goBack }: { goBack: () => void }) {
       <View style={styles.topNavigation}>
         <Image style={styles.icon} source={require("../assets/recent.png")} />
         <Image style={styles.icon} source={require("../assets/home.png")} />
+        <TouchableOpacity onPress={goBack}>
         <Image style={styles.icon} source={require("../assets/return.png")} />
+        </TouchableOpacity>
       </View>
     </View>
 

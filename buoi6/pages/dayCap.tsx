@@ -100,17 +100,20 @@ const Item = ({ img, title, price, discount, rating, reviews }: ItemProps) => (
 
 export default function App({ goBack }: { goBack: () => void }) {
   return (
-    <View style={styles.container}>
-   <View style={styles.topNavigation}>
-  <Image style={styles.icon} source={require("../assets/back.png")} />
-  <View style={styles.inputContainer}>
-  <Image style={{height: 30, width: 30}} source={require("../assets/search.png")}/>
-  <TextInput style={styles.input} placeholder="Dây cáp USB"/>
+  <View style={styles.container}>
+
+  
+  <View style={styles.topNavigation}>
+    <TouchableOpacity onPress={goBack}>
+      <Image style={styles.icon} source={require("../assets/back.png")} />
+    </TouchableOpacity>
+    <View style={styles.inputContainer}>
+      <Image style={{height: 30, width: 30}} source={require("../assets/search.png")}/>
+    <TextInput style={styles.input} placeholder="Dây cáp USB"/>
+    </View>
+    <Image style={styles.icon} source={require("../assets/cart.png")} />
+    <Text style={{fontSize: 25, color: 'white'}}>...</Text>
   </View>
-  <Image style={styles.icon} source={require("../assets/cart.png")
-  } />
-  <Text style={{fontSize: 25, color: 'white'}}>...</Text>
-</View>
 
      <FlatList
       data={DATA}
@@ -132,7 +135,9 @@ export default function App({ goBack }: { goBack: () => void }) {
       <View style={styles.topNavigation}>
         <Image style={styles.icon} source={require("../assets/recent.png")} />
         <Image style={styles.icon} source={require("../assets/home.png")} />
-        <Image style={styles.icon} source={require("../assets/return.png")} />
+        <TouchableOpacity onPress={goBack}>
+          <Image style={styles.icon} source={require("../assets/return.png")} />
+        </TouchableOpacity>
       </View>
     </View>
 
