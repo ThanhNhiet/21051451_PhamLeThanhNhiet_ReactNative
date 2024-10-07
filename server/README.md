@@ -1,4 +1,5 @@
 cd server
+
 json-server --watch toDoData.json
 
 If not work. Try: 
