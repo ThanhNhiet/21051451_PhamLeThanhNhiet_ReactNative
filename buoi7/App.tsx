@@ -1,164 +1,107 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, FlatList, Text, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native';
-import axios from 'axios';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Text, SafeAreaView, StyleSheet, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './pages/home'
+import CRUD from './pages/crudTodo'
 
-const App = () => {
-  // const Api = "https://my-json-server.typicode.com/ThanhNhiet/toDoData/posts";
-  const Api = "http://localhost:3000/posts";
-
-  type Todo = {
-    id: any;
-    title: string;
-    completed: boolean;
-  };
-
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState(true);
-  const data = [
-    {
-      "id": 5,
-      "title": "homework",
-      "completed": false
-    }
-  ]
-  useEffect(() => {
-    const fetchTodos = async () => {
-      try {
-        const response = await axios.get(Api);
-        setTodos(response.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTodos();
-  }, []);
-
-
-  //reload
-  const reload = async () => {
-    try {
-        const response = await axios.get(Api);
-        setTodos(response.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-  };
-
-  //add
-  const addTodo = async () => {
-    const newTodoItem = {
-      title: "homework",
-      completed: false,
-    };
-
-    try {
-      const response = await axios.post(Api, newTodoItem);
-      setTodos([...todos, response.data]);
-    } catch (error) {
-      console.error('Error adding todo:', error);
-    }
-  };
-
-  //Delete
-   const deleteTodo = async () => {
-     const id = '70ff';
-    try {
-      await axios.delete(Api+`/${id}`);
-      setTodos(todos.filter(todo => todo.id !== id));
-    } catch (error) {
-      console.error('Error deleting todo:', error);
-    }
-  };
-
-  //update
-  const updateTodo = async () => {
-  const id = 3; // Example id to update
-  const updatedTodo = {
-    title: "heyy", // New title
-  };
-
-  try {
-    await axios.patch(Api+`/${id}`, updatedTodo);
-    setTodos(todos.map((todo) => 
-      todo.id === id ? { ...todo, ...updatedTodo } : todo
-    ));
-  } catch (error) {
-    console.error('Error updating todo:', error);
-  }
-};
-
-  const renderItem = ({ item }: any) => (
-    <View style={styles.item}>
-      <Text >{item.id}</Text>
-      <Text >{item.title}</Text>
-    </View>
-  );
+const Stack = createNativeStackNavigator();
+function Login({navigation}: any) {
   
-  return(
+  const [name, setName] = useState('');
+
+  return (
     <View style={styles.container}>
-    <ScrollView>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.button} onPress={addTodo}>
-          <Text>Add</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={updateTodo}>
-          <Text>Edit</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={deleteTodo}>
-          <Text>Delete</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={reload}>
-          <Text>Reload</Text>
-        </TouchableOpacity>
+      <View style={styles.containerImg}>
+        <Image
+          style={{
+            width: 400,
+            height: 400,
+          }}
+          source={require("./img/noteImg.png")}/>
       </View>
-      
 
-      <View style={styles.content}>
-        <FlatList
-          data={todos}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={renderItem}
+      <View style={styles.containerTitle}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: 'bold',
+            color: 'blue'
+          }}
+        >
+          MANAGE YOUR TASK
+        </Text>
+      </View>
+
+      <View style={styles.containerInput}>
+        <TextInput style={{
+          textAlign: 'center',
+          fontSize: 18,
+          color: 'gray',
+          height: 40,
+          width: '90%',
+          borderRadius: 20,
+          borderWidth: 1
+        }} keyboardType='default' placeholder='Enter your name'
+          value={name}
+          onChangeText={(text) => setName(text)}
         />
       </View>
-      </ScrollView>
+
+      <View style={styles.containerButton}>
+        <TouchableOpacity 
+          style={{
+            backgroundColor: '#08bcd4',
+            height: 50,
+            width: 200,
+            justifyContent: 'center',
+            borderRadius: 30,
+          }}
+          onPress={() => navigation.navigate('Home', { name })}
+        >
+          <Text style={{textAlign: 'center', fontSize: 18, color: 'white'}}>GET STARTED</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
-};
+}
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+        <Stack.Screen name="CRUD" component={CRUD} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-
-  header:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-
-  button:{
-    backgroundColor: 'gray',
-    padding: 20
-  },
-
-  content:{
-    marginTop: 20,
     paddingHorizontal: 20,
+    marginTop: 90,
+  },
+  containerImg:{
+    flex: 3,
     alignItems: 'center'
   },
-
-  item:{
-    padding: 5,
-    backgroundColor: 'pink',
-    marginBottom: 10
+  containerTitle:{
+    flex: 1,
+    paddingTop: 40,
+    alignItems: 'center'
+  },
+  containerInput:{
+    flex: 0.5,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingBottom: 20
+  },
+  containerButton:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
-
-export default App;
